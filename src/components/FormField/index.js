@@ -1,27 +1,31 @@
 import React from 'react';
+import { FieldDiv, Input, InputText, LabelSpan } from './styles'
 
 function FormField({ label, type, name, value, onChange }) {
   return (
-    <div>
+    <FieldDiv>
       <label>
-        {label} :
         {type === 'textarea'? 
-          <textarea
+          <InputText
+          as="textarea"
           type="text"
           name={name}
           value={value}
           onChange={onChange}
           />          
         :
-          <input
+          <Input
           type={type}
           name={name}
           value={value}
           onChange={onChange}
           />
         }
+        <LabelSpan>
+          {label} :
+        </LabelSpan>
       </label>
-    </div>
+    </FieldDiv>
   )
 }
 

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PageDefault from '../../../components/PageDefault';
 import { Link } from 'react-router-dom';
 import FormField from '../../../components/FormField';
+import Button from '../../../components/Button';
 
 function CadastroCategoria() {
   const ValoresIniciais = {
@@ -84,9 +85,12 @@ function CadastroCategoria() {
           </label>
         </div> */}
 
-        <button>
+        {/* <button>
           Cadastrar
-        </button>
+        </button> */}
+        <Button>
+          Cadastrar
+        </Button>
       </form>
       
       <ul>
