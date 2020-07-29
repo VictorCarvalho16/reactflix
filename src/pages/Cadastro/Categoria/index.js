@@ -45,15 +45,15 @@ function CadastroCategoria() {
           onChange={handleChange}
         />
 
-        {/* <FormField
+        <FormField
           label="Descrição"
           type="textarea"
           name="descricao"
           value={formValues.descricao}
           onChange={handleChange}
-        /> */}
+        />
 
-        <div>
+        {/* <div>
           <label>
             Descrição:
             <textarea
@@ -63,7 +63,7 @@ function CadastroCategoria() {
               onChange={handleChange}
             />
           </label>
-        </div>
+        </div> */}
 
         <FormField
           label="Cor"

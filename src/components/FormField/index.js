@@ -5,12 +5,21 @@ function FormField({ label, type, name, value, onChange }) {
     <div>
       <label>
         {label} :
-        <input
+        {type === 'textarea'? 
+          <textarea
+          type="text"
+          name={name}
+          value={value}
+          onChange={onChange}
+          />          
+        :
+          <input
           type={type}
           name={name}
           value={value}
           onChange={onChange}
-        />
+          />
+        }
       </label>
     </div>
   )
