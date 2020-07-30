@@ -34,15 +34,13 @@ function CadastroCategoria() {
   }
 
   useEffect(() => {
-    const URL = 'http://localhost:8080/categorias';
-    setTimeout(() => {
-      fetch(URL).then(async (response) => {
-        const res = await response.json();
-        setCategorias([
-          ...res,
-        ]);
-      });
-    }, 4 * 1000);
+    const URL = 'https://tecflix.herokuapp.com/categorias';
+    fetch(URL).then(async (response) => {
+      const res = await response.json();
+      setCategorias([
+        ...res,
+      ]);
+    });
   }, []);
 
   return (
