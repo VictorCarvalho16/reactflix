@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled, { css } from 'styled-components';
 
-export const FieldDiv = styled.div`
+export const FieldWrapper = styled.div`
   position: relative;
 
   input[type="color"] {
@@ -32,13 +32,18 @@ export const Input = styled.input`
   &:focus:not([type="color"]) + span {
     transform: scale(0.6) translateY(-10px);
   }
+  ${({ hasValue }) => hasValue && css`
+      &:not([type="color"]) + span {
+        transform: scale(0.6) translateY(-10px);
+      }
+    `}
 `;
 
 export const InputText = styled(Input)`
   min-height: 150px;
-`
+`;
 
-export const LabelSpan = styled.span`
+export const LabelText = styled.span`
   color: rgb(229, 229, 229);
   height: 57px;
   position: absolute;
