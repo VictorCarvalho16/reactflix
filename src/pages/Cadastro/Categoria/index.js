@@ -3,39 +3,27 @@ import { Link } from 'react-router-dom';
 import PageDefault from '../../../components/PageDefault';
 import FormField from '../../../components/FormField';
 import Button from '../../../components/Button';
+import useForm from '../../../hooks/useForms';
+import URL from '../../../config';
 
 function CadastroCategoria() {
-  const ValoresIniciais = {
+  const valoresIniciais = {
     nome: '',
     descricao: '',
     cor: '#000',
   };
+
+  const { handleChange, formValues, clearForm } = useForm(valoresIniciais);
   const [categorias, setCategorias] = useState([]);
-  const [formValues, setFormValues] = useState(ValoresIniciais);
 
   function handleSubmit(event) {
     event.preventDefault();
     setCategorias([...categorias, formValues]);
-    setFormValues(ValoresIniciais);
-  }
-
-  function setValue(chave, valor) {
-    setFormValues({
-      ...formValues,
-      [chave]: valor,
-    });
-  }
-
-  function handleChange(event) {
-    setValue(
-      event.target.getAttribute('name'),
-      event.target.value,
-    );
+    clearForm();
   }
 
   useEffect(() => {
-    const URL = 'https://tecflix.herokuapp.com/categorias';
-    fetch(URL).then(async (response) => {
+    fetch(`${URL}categorias`).then(async (response) => {
       const res = await response.json();
       setCategorias([
         ...res,
@@ -84,9 +72,9 @@ function CadastroCategoria() {
       )}
 
       <ul>
-        {categorias.map((categoria, indice) => (
-          <li key={`${categoria}_${indice + 1}`}>
-            {categoria.nome}
+        {categorias.map((categoria) => (
+          <li key={categoria.id}>
+            {categoria.titulo}
           </li>
         ))}
       </ul>
