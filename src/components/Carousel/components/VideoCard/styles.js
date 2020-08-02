@@ -19,14 +19,42 @@ const VideoCardContainer = styled.a`
   align-items: flex-end;
   padding: 16px;
 
-  transition: opacity .3s;
   &:hover,
   &:focus {
-    opacity: .5;
+    &:after,
+    span {
+      opacity: 1;
+    }
   }
-  
+
   &:not(:first-child) {
     margin-left: 20px;
+  }
+
+  &:after,
+  span {
+    font-size: 1.4rem;
+    position: absolute;
+    opacity: 0;
+    transition: .3s;
+  }
+  
+  span {
+    margin: 0;
+    left: 10px;
+    bottom: 10px;
+    z-index: 10;
+    font-weight: 700;
+  }
+
+  &:after {
+    content: "";
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.5);
+    z-index: 1;
   }
 `;
 
