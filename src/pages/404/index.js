@@ -6,7 +6,7 @@ function Page404() {
     <PageDefault>
       <h1>Pagina não encontrada</h1>
     </PageDefault>
-  )
+  );
 }
 
 export default Page404;

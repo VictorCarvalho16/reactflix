@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-export const FieldWrapper = styled.div`
+const FieldWrapper = styled.div`
   position: relative;
 
   input[type="color"] {
@@ -8,7 +8,7 @@ export const FieldWrapper = styled.div`
   }
 `;
 
-export const Input = styled.input`
+const Input = styled.input`
   background: rgb(83, 88, 93) none repeat scroll 0% 0%;
   color: rgb(245, 245, 245);
   display: block;
@@ -39,11 +39,11 @@ export const Input = styled.input`
     `}
 `;
 
-export const InputText = styled(Input)`
+const InputText = styled(Input)`
   min-height: 150px;
 `;
 
-export const LabelText = styled.span`
+const LabelText = styled.span`
   color: rgb(229, 229, 229);
   height: 57px;
   position: absolute;
@@ -58,3 +58,7 @@ export const LabelText = styled.span`
   font-weight: 300;
   transition: all 0.1s ease-in-out 0s;
 `;
+
+export {
+  FieldWrapper, Input, InputText, LabelText,
+};

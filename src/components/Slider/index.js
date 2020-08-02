@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
+import PropTypes from 'prop-types';
 import SlickSlider from 'react-slick';
 import styled from 'styled-components';
 
@@ -28,7 +29,7 @@ const Container = styled.ul`
   }
 `;
 
-export const SliderItem = styled.li`
+const SliderItem = styled.li`
   margin-right: 16px;
   img {
     margin: 16px;
@@ -37,7 +38,6 @@ export const SliderItem = styled.li`
     object-fit: cover;
   }
 `;
-
 
 const Slider = ({ children }) => (
   <Container>
@@ -55,4 +55,9 @@ const Slider = ({ children }) => (
   </Container>
 );
 
-export default Slider; 
+Slider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default Slider;
+export { SliderItem };

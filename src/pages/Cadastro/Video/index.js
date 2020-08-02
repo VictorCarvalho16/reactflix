@@ -19,7 +19,9 @@ function CadastroVideo() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    const categoriaEscolhida = categorias.find((categoria) => categoria.titulo === formValues.categoria);
+    const categoriaEscolhida = categorias.find((categoria) => (
+      categoria.titulo === formValues.categoria
+    ));
 
     videosRepository.create({
       titulo: formValues.titulo,

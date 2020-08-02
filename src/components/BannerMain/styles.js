@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const ContentAreaContainer = styled.section`
+const ContentAreaContainer = styled.section`
   margin-left: 5%;
   margin-right: 5%;
   height: 100%;
@@ -65,7 +65,7 @@ ContentAreaContainer.Title = styled.h2`
   }
 `;
 
-export const BannerMainContainer = styled.section`
+const BannerMainContainer = styled.section`
   height: 80vh;
   position: relative;
   color: #fff;
@@ -100,7 +100,7 @@ export const BannerMainContainer = styled.section`
   }
 `;
 
-export const WatchButton = styled.button`
+const WatchButton = styled.button`
   font-family: 'Roboto', sans-serif;
   box-sizing: border-box;
   cursor: pointer;
@@ -123,3 +123,5 @@ export const WatchButton = styled.button`
     display: block;
   }
 `;
+
+export { ContentAreaContainer, BannerMainContainer, WatchButton };
